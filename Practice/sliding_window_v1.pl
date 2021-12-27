@@ -35,8 +35,8 @@ while (<DATA>) {
 	$max_length = $site if ($max_length < $site);
 }
 
-my $mac_code = int ($max_length / $window_steplen - 1);
-foreach my $window_code (0..$mac_code) {
+my $max_code = int ($max_length / $window_steplen - 1);
+foreach my $window_code (0..$max_code) {
 	my ($left, $right) = &WINDOW_RANGE ($window_code, $max_length);
 	my $result = ($temp1{$window_code}) ? $temp1{$window_code} : 0;
 	print "$window_code\t$left\t$right\t$result\n";
